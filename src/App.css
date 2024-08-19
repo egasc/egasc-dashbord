@@ -1,0 +1,11 @@
+@media only screen and (max-width: 768px) {
+    .console-side{
+        padding: 90px 0px 0px 0px !important; 
+        }
+  
+    } 
+  .console-side{
+    background-color: #FAFBFF;
+    min-height: 100vh;
+    padding: 30px;
+  }
