@@ -43,7 +43,7 @@ function App() {
         <Router>
           <Routes>
             <Route path="*" exact element={<Pagenotfound />} />
-            <Route path="/" exact element={<LeaderPage />} />
+            <Route path="/leaders" exact element={<LeaderPage />} />
             <Route path="/Members" element={<MemberPage />} />
             <Route path="/Games" element={<GamesPage />} />
             <Route path="/Admin" element={<AdminPage />} />
@@ -58,7 +58,7 @@ function App() {
       <div>
         <Router>
           <Routes>
-          <Route path="/" exact element={<Loggin/>} />
+          <Route path="/egasc-dashbord" exact element={<Loggin/>} />
           </Routes>
         </Router>
       </div>

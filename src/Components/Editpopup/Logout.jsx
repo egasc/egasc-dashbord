@@ -8,7 +8,7 @@ function Logout({ close }) {
   const handleLogout = async () => {
     try {
       await signOut(auth);
-      navigate('/')
+      navigate('/egasc-dashbord')
       // Redirect or show a success message
     } catch (error) {
       console.error("Error logging out: ", error);

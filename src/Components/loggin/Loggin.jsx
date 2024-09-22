@@ -13,6 +13,7 @@ function Loggin() {
     username: "",
     password: "",
   });
+  
   // const { setLoggedin } = useContext(AuthContext);
   const [error, setError] = useState(null);
   const [loading, setLoading] = useState(false);
@@ -45,13 +46,13 @@ function Loggin() {
           </hgroup>
           <form>
             <div className="group">
-              <input type="text" name="username" onChange={setForm} />
+              <input type="text" name="username" className={form.username && "used"} onChange={setForm} />
               <span className="highlight"></span>
               <span className="bar"></span>
               <label>Username</label>
             </div>
             <div className="group">
-              <input type="email" name="password" onChange={setForm} />
+              <input type="email" name="password" className={form.password && "used"} onChange={setForm} />
               <span className="highlight"></span>
               <span className="bar"></span>
               <label>Password</label>

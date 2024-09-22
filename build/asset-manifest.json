@@ -1,0 +1,17 @@
+{
+  "files": {
+    "main.css": "/egasc-dashbord/static/css/main.b1907719.css",
+    "main.js": "/egasc-dashbord/static/js/main.f8ac573e.js",
+    "static/media/EGASC.png": "/egasc-dashbord/static/media/EGASC.e6473f018149e28d03e1.png",
+    "static/media/profile.png": "/egasc-dashbord/static/media/profile.d3423429e860341ea0d8.png",
+    "static/media/person-logo.svg": "/egasc-dashbord/static/media/person-logo.11b79954333a3c5a94a27c45fff43a71.svg",
+    "index.html": "/egasc-dashbord/index.html",
+    "static/media/addmemberlogo.svg": "/egasc-dashbord/static/media/addmemberlogo.c8885fdbeae3b916ba6108e5472656e2.svg",
+    "main.b1907719.css.map": "/egasc-dashbord/static/css/main.b1907719.css.map",
+    "main.f8ac573e.js.map": "/egasc-dashbord/static/js/main.f8ac573e.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.b1907719.css",
+    "static/js/main.f8ac573e.js"
+  ]
+}
