@@ -39,15 +39,15 @@ function App() {
   console.log(user);
   if (user) {
     return (
-      <div>
+      <div className="container-fluid">
         <Router>
           <Routes>
             <Route path="*" exact element={<Pagenotfound />} />
-            <Route path="/leaders" exact element={<LeaderPage />} />
-            <Route path="/Members" element={<MemberPage />} />
-            <Route path="/Games" element={<GamesPage />} />
-            <Route path="/Admin" element={<AdminPage />} />
-            <Route path="/Members/Addmember" element={<AddmemberPage />} />
+            <Route path="/egasc-dashbord/" exact element={<LeaderPage />} />
+            <Route path="/egasc-dashbord/Members" element={<MemberPage />} />
+            <Route path="/egasc-dashbord/Games" element={<GamesPage />} />
+            <Route path="/egasc-dashbord/Admin" element={<AdminPage />} />
+            <Route path="/egasc-dashbord/Members/Addmember" element={<AddmemberPage />} />
             <Route path="*" exact element={<Pagenotfound />} />
           </Routes>
         </Router>

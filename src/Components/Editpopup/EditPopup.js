@@ -1,9 +1,12 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import "./editpopup.css";
 import { Useform } from "../../Useform";
 import { app } from "../../firebase/Config";
 import { doc, updateDoc, getFirestore } from "firebase/firestore";
-
+// import { collection, addDoc } from "firebase/firestore";
+import { getStorage } from "firebase/storage";
+import { ref, uploadBytesResumable, getDownloadURL } from "firebase/storage";
+import Loding from "../Mianloding/Loding";
 function EditPopup({
   name,
   phone,
@@ -23,29 +26,85 @@ function EditPopup({
     address: address,
     dob: DOB,
   });
+  const [image, setImage] = useState();
+  const [url, setUrl] = useState("");
+  const [progress, setProgress] = useState(0);
   const db = getFirestore(app);
+  const [loading, setLoading] = useState(false);
+  const storage = getStorage(app);
 
   const handleUpdat = async () => {
-    try {
-      const docRef = doc(db, "members", id);
-      await updateDoc(docRef, {
-        name: form.name,
-        blood: form.blood,
-        phone: form.phone,
-        cardNo: form.cardNo,
-        DOB: form.dob,
-        address: form.address,
-      });
-      // console.log('Document updated successfully');
-      close();
-    } catch (error) {
-      console.error("Error updating document: ", error);
+    if (image) {
+      setLoading(true)
+      const storageRef = ref(storage, `profile/${image.name}`);
+      const uploadTask = uploadBytesResumable(storageRef, image);
+      uploadTask.on(
+        "state_changed",
+        (snapshot) => {
+          const progress =
+            (snapshot.bytesTransferred / snapshot.totalBytes) * 100;
+          setProgress(Math.round(progress));
+          console.log(progress);
+        },
+        (error) => {
+          setLoading(false)
+          console.error("Upload failed:", error);
+        },
+        // --------
+        () => {
+          getDownloadURL(uploadTask.snapshot.ref).then((downloadURL) => {
+            setUrl(downloadURL);
+            console.log(url);
+            // data set
+            try {
+              const docRef = doc(db, "members", id);
+               updateDoc(docRef, {
+                name: form.name,
+                blood: form.blood,
+                phone: form.phone,
+                cardNo: form.cardNo,
+                DOB: form.dob,
+                address: form.address,
+                imgUrl: downloadURL,
+              });
+              close();
+              // alert('succuss')
+            } catch (e) {
+              console.error("Error updating document: ", e);
+            }
+          });
+        }
+      );
+    }
+    else{
+      try {
+        const docRef = doc(db, "members", id);
+        await updateDoc(docRef, {
+          name: form.name,
+          blood: form.blood,
+          phone: form.phone,
+          cardNo: form.cardNo,
+          DOB: form.dob,
+          address: form.address
+        });
+        // console.log('Document updated successfully');
+        close();
+      } catch (error) {
+        console.error("Error updating document: ", error);
+      }
+    }
+  };
+
+  const handleImageChange = (e) => {
+    if (e.target.files[0]) {
+      setImage(e.target.files[0]);
     }
   };
 
   useEffect(() => {}, [id]);
   return (
     <div className="editform">
+       {loading && <Loding progress={progress} />}
       <div className="form-container">
         <h2>Edit Information</h2>
         <form action="">
@@ -57,11 +116,12 @@ function EditPopup({
                   name="photo"
                   id="file-input"
                   class="file-input__input"
+                  onChange={handleImageChange}
                 />
                 <label
                   class="file-input__label"
                   for="file-input"
-                  style={{ backgroundImage: `url(${profile})` }}
+                  style={{backgroundImage: image ? `url(${URL.createObjectURL(image)})` : `url(${profile})`}}
                 ></label>
               </div>
             </div>

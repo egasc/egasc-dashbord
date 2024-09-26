@@ -23,7 +23,6 @@ function Members() {
   const navigate = useNavigate();
   const [members, setMemeber] = useState();
   let [memberscount, setMemberscount] = useState("");
-
   useEffect(() => {
     const fetchData = async () => {
       const querySnapshot = await getDocs(collection(db, "members"));
@@ -31,11 +30,11 @@ function Members() {
         id: doc.id,
         ...doc.data(),
       }));
-      setMemeber(dataArray);
+      setMemeber(dataArray.sort((a, b) => a.cardNo - b.cardNo));
       setMemberscount(dataArray.length);
     };
     fetchData();
-  }, [db, members]);
+  }, [db,members]);
 
   const handleDelete = async (id) => {
     await deleteDoc(doc(db, "members", id));
@@ -44,7 +43,7 @@ function Members() {
 
   return (
     <section className="col-lg-9 col-md-8 col-sm-12 console-side mx-0">
-      <div className="container position-relative">
+      <div className="container-md position-relative">
         <h2>
           Hello <span>Admin</span> 👋🏼
         </h2>
@@ -81,7 +80,7 @@ function Members() {
             {/* add member btn */}
             <div
               className="add-member-btn"
-              onClick={() => navigate("/Members/Addmember")}
+              onClick={() => navigate("/egasc-dashbord/Members/Addmember")}
             >
               <i className="fa-solid fa-user-plus"></i>
             </div>
@@ -175,8 +174,8 @@ function Members() {
                                 address={value.address}
                                 blood={value.blood}
                                 profile={
-                                  value.profileUrl
-                                  ? value.profileUrl
+                                  value.imgUrl
+                                  ? value.imgUrl
                                   : dummyProfile
                                 }
                                 DOB={value.DOB}

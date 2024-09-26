@@ -66,7 +66,7 @@ function Addmemeber() {
                 imgUrl: downloadURL,
               });
               // alert('succuss')
-              navigate("/Members");
+              navigate("/egasc-dashbord/Members");
             } catch (e) {
               console.error("Error adding document: ", e);
             }
@@ -85,7 +85,7 @@ function Addmemeber() {
           address: form.address,
         });
         // alert('succuss')
-        navigate("/Members");
+        navigate("/egasc-dashbord/Members");
       } catch (e) {
         console.error("Error adding document: ", e);
       }
@@ -102,7 +102,7 @@ function Addmemeber() {
        {loading && <Loding progress={progress} />}
       <div className="p-3">
         <div className="add-member">
-          <div className="back-btn" onClick={() => navigate("/Members")}>
+          <div className="back-btn" onClick={() => navigate("/egasc-dashbord/Members")}>
             <h6 className="d-inline-flex gap-2">
               <i className="fa-solid fa-arrow-left"></i>Back
             </h6>
@@ -182,7 +182,7 @@ function Addmemeber() {
                   </div>
                 </div>
                 <div className="col-6">
-                  <label for="birthday">Birthday:</label>
+                  <label for="birthday">DOB:</label>
                   <input
                     type="date"
                     id="birthday"

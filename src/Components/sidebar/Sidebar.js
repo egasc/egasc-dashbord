@@ -9,10 +9,10 @@ import Popup from "reactjs-popup";
 function Sidebar() {
   const navigate = useNavigate();
   const location = useLocation();
-  const LeaderClass = location.pathname === "/" ? "nav-active" : "";
-  const MembersClass = location.pathname.match(/^\/Members/) ? "nav-active" : "";
-  const GamesClass = location.pathname.match(/^\/Games/) ? "nav-active" : "";
-  const AdminClass = location.pathname.match(/^\/Admin/) ? "nav-active" : "";
+  const LeaderClass = location.pathname === "/egasc-dashbord/" ? "nav-active" : "";
+  const MembersClass = location.pathname.match(/egasc-dashbord\/Members/) ? "nav-active" : "";
+  const GamesClass = location.pathname.match(/egasc-dashbord\/Games/) ? "nav-active" : "";
+  const AdminClass = location.pathname.match(/egasc-dashbord\/Admin/) ? "nav-active" : "";
   return (
     <section className="col-lg-3 col-md-4  mx-0 side-bar">
       <nav role="navigation">
@@ -36,28 +36,28 @@ function Sidebar() {
                   </h6>
                 </div>
               </div>
-              <div className={`nav-items ${LeaderClass}`} onClick={() => navigate("/")}>
+              <div className={`nav-items ${LeaderClass}`} onClick={() => navigate("/egasc-dashbord/")}>
                 <div>
                   <h6 className="nav-item m-0">
                     <i className="fa-solid fa-user"></i> Leaders
                   </h6>
                 </div>
               </div>
-              <div className={`nav-items ${MembersClass}`} onClick={() => navigate("/Members")}>
+              <div className={`nav-items ${MembersClass}`} onClick={() => navigate("/egasc-dashbord/Members")}>
                 <div>
                   <h6 className="nav-item m-0 ">
                     <i className="fa-solid fa-address-card"></i> members
                   </h6>
                 </div>
               </div>
-              <div className={`nav-items ${GamesClass}`} onClick={() => navigate("/Games")}>
+              <div className={`nav-items ${GamesClass}`} onClick={() => navigate("/egasc-dashbord/Games")}>
                 <div>
                   <h6 className="nav-item m-0">
                     <i className="fa-solid fa-gamepad"></i> Games
                   </h6>
                 </div>
               </div>
-              <div className={`nav-items ${AdminClass}`} onClick={() => navigate("/Admin")}>
+              <div className={`nav-items ${AdminClass}`} onClick={() => navigate("/egasc-dashbord/Admin")}>
                 <div>
                   <h6 className="nav-item m-0">
                     <i className="fa-solid fa-person-circle-plus"></i> Add New
