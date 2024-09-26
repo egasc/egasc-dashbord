@@ -39,7 +39,7 @@ function Sidebar() {
               <div className={`nav-items ${LeaderClass}`} onClick={() => navigate("/egasc-dashbord/")}>
                 <div>
                   <h6 className="nav-item m-0">
-                    <i className="fa-solid fa-user"></i> Leaders
+                  <i class="fa-solid fa-image"></i> Posts
                   </h6>
                 </div>
               </div>

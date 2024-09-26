@@ -48,7 +48,6 @@ function App() {
             <Route path="/egasc-dashbord/Games" element={<GamesPage />} />
             <Route path="/egasc-dashbord/Admin" element={<AdminPage />} />
             <Route path="/egasc-dashbord/Members/Addmember" element={<AddmemberPage />} />
-            <Route path="*" exact element={<Pagenotfound />} />
           </Routes>
         </Router>
       </div>
