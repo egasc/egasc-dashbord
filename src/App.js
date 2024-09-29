@@ -64,7 +64,7 @@ function App() {
       <div>
         <Router>
           <Routes>
-            <Route path="/egasc-dashbord" exact element={<Loggin />} />
+            <Route path="*" exact element={<Loggin />} />
           </Routes>
         </Router>
       </div>
