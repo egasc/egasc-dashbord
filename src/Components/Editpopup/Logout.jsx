@@ -3,11 +3,13 @@ import "./editpopup.css";
 import { signOut } from "firebase/auth";
 import { auth } from "../../firebase/Config";
 import { useNavigate } from "react-router-dom";
+import Cookies from 'js-cookie';
 function Logout({ close }) {
     const navigate = useNavigate();
   const handleLogout = async () => {
     try {
       await signOut(auth);
+      Cookies.remove('myData');
       navigate('/egasc-dashbord')
       // Redirect or show a success message
     } catch (error) {
@@ -54,7 +56,7 @@ function Logout({ close }) {
                   Cancel
                 </button>
                 <button className="card-button primary" type="button" onClick={handleLogout}>
-                  Logout Anyway<i class="fa-solid fa-right-from-bracket mx-1"></i>
+                  Logout<i class="fa-solid fa-right-from-bracket mx-1"></i>
                 </button>
               </div>
             </tr>

@@ -4,22 +4,26 @@ import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import { getAuth, onAuthStateChanged } from "firebase/auth";
 import { AuthContext, FirebaseContext } from "./contexts/myContext";
 // pages
-import LeaderPage from "./Pages/LeaderPage";
+import Postpage from "./Pages/Postpage";
 import MemberPage from "./Pages/MemberPage";
 import GamesPage from "./Pages/GamesPage";
 import AdminPage from "./Pages/AdminPage";
 import Pagenotfound from "./Components/404/Pagenotfound";
 import AddmemberPage from "./Pages/AddmemberPage";
 import Loggin from "./Components/loggin/Loggin";
-
+import Cookies from "js-cookie";
 /*
 =====Import Components=====
 */
 
 function App() {
-  const {setUser } = useContext(AuthContext);
+  const { setUser } = useContext(AuthContext);
   const { user } = useContext(AuthContext);
   const { app } = useContext(FirebaseContext);
+
+  if (user) {
+    Cookies.set("myData", true, { expires: 7 }); // The cookie expires in 7 days
+  }
   const auth = getAuth(app);
   // loggin cookies save here
   useEffect(() => {
@@ -27,27 +31,30 @@ function App() {
       setUser(user);
     });
   });
-
   // Another Method
   // useEffect(() => {
   //   const unsubscribe = onAuthStateChanged(auth, (user) => {
   //     setUser(user);
   //   });
 
-  //   return unsubscribe; // 
+  //   return unsubscribe; //
   // },[]);
   console.log(user);
-  if (user) {
+  console.log(Cookies.get('myData'));
+  if (user || Cookies.get('myData')==='true') {
     return (
       <div className="container-fluid">
         <Router>
           <Routes>
             <Route path="*" exact element={<Pagenotfound />} />
-            <Route path="/egasc-dashbord/" exact element={<LeaderPage />} />
+            <Route path="/egasc-dashbord/" exact element={<Postpage />} />
             <Route path="/egasc-dashbord/Members" element={<MemberPage />} />
             <Route path="/egasc-dashbord/Games" element={<GamesPage />} />
             <Route path="/egasc-dashbord/Admin" element={<AdminPage />} />
-            <Route path="/egasc-dashbord/Members/Addmember" element={<AddmemberPage />} />
+            <Route
+              path="/egasc-dashbord/Members/Addmember"
+              element={<AddmemberPage />}
+            />
           </Routes>
         </Router>
       </div>
@@ -57,7 +64,7 @@ function App() {
       <div>
         <Router>
           <Routes>
-          <Route path="/egasc-dashbord" exact element={<Loggin/>} />
+            <Route path="/egasc-dashbord" exact element={<Loggin />} />
           </Routes>
         </Router>
       </div>
@@ -66,25 +73,6 @@ function App() {
 }
 
 export default App;
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 // import React, { useEffect, useContext } from "react";
 // import "./App.css";
@@ -114,7 +102,7 @@ export default App;
 //       setUser(user);
 //     });
 //   });
-  
+
 //   if (logedin) {
 //     return (
 //       <div>
@@ -145,4 +133,3 @@ export default App;
 // }
 
 // export default App;
-

@@ -178,7 +178,7 @@
 }
 
 .movie--isloading .loading-content .loading-btn {
-  width: 60px;
+  width: 30px;
   height: 25px;
   background: #ececec;
   background-image: -webkit-linear-gradient(left, #ececec 0px, #ddd 40px, #ececec 80px);
@@ -189,7 +189,9 @@
   -webkit-animation: shine-loading-container-items 2s infinite ease-out;
           animation: shine-loading-container-items 2s infinite ease-out;
 }
-
+.movie--isloading .loading-content .loading-btn +.loading-btn {
+  margin-left: 5px;
+}
 
 @-webkit-keyframes shine-loading-image {
   0% {

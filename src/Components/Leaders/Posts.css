@@ -1,0 +1,21 @@
+.add-post-btn{
+    padding: 8px 14px;
+    background-color: #030760;
+    border: 0;
+    color: #ffffff;
+    border-radius: 3px;
+    box-shadow: rgba(0, 0, 0, 0.09) 0px 3px 12px;
+}
+.add-post-paternt{
+    background: rgb(255, 255, 255);
+    padding: 10px 11px;
+    border-radius: 5px;
+    box-shadow: rgba(36, 16, 26, 0.1) 1px 1px 3px;
+}
+@media only screen and (max-width: 767px) {
+    .add-post-paternt{
+        position: sticky;
+        top: 100px;
+        /* z-index: 6; */
+    }
+}
