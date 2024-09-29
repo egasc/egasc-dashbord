@@ -14,7 +14,7 @@
 }
 .add-post-paternt h4{
     font-size: 20px;
-    text-shadow: 1px 0px 1px #0000005c;
+    text-shadow: 1px 0px 2px #00000024;
 }
 @media only screen and (max-width: 767px) {
     .add-post-paternt{
