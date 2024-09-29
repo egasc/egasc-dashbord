@@ -8,7 +8,7 @@ import Postpage from "./Pages/Postpage";
 import MemberPage from "./Pages/MemberPage";
 import GamesPage from "./Pages/GamesPage";
 import AdminPage from "./Pages/AdminPage";
-import Pagenotfound from "./Components/404/Pagenotfound";
+// import Pagenotfound from "./Components/404/Pagenotfound";
 import AddmemberPage from "./Pages/AddmemberPage";
 import Loggin from "./Components/loggin/Loggin";
 import Cookies from "js-cookie";
@@ -46,7 +46,7 @@ function App() {
       <div className="container-fluid">
         <Router>
           <Routes>
-            <Route path="*" exact element={<Pagenotfound />} />
+            <Route path="*" exact element={<Postpage />} />
             <Route path="/egasc-dashbord/" exact element={<Postpage />} />
             <Route path="/egasc-dashbord/Members" element={<MemberPage />} />
             <Route path="/egasc-dashbord/Games" element={<GamesPage />} />
