@@ -12,6 +12,10 @@
     border-radius: 5px;
     box-shadow: rgba(36, 16, 26, 0.1) 1px 1px 3px;
 }
+.add-post-paternt h4{
+    font-size: 20px;
+    text-shadow: 1px 0px 1px #0000005c;
+}
 @media only screen and (max-width: 767px) {
     .add-post-paternt{
         position: sticky;
