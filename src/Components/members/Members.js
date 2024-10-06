@@ -25,13 +25,20 @@ function Members() {
   let [memberscount, setMemberscount] = useState("");
   useEffect(() => {
     const fetchData = async () => {
-      const querySnapshot = await getDocs(collection(db, "members"));
-      const dataArray = querySnapshot.docs.map((doc) => ({
-        id: doc.id,
-        ...doc.data(),
-      }));
-      setMemeber(dataArray.sort((a, b) => a.cardNo - b.cardNo));
-      setMemberscount(dataArray.length);
+      try {
+        const querySnapshot = await getDocs(collection(db, "members"));
+        const dataArray = querySnapshot.docs.map((doc) => ({
+          id: doc.id,
+          ...doc.data(),
+        }));
+        
+        // Sorting and setting the data
+        setMemeber(dataArray.sort((a, b) => a.cardNo - b.cardNo));
+        setMemberscount(dataArray.length);
+      } catch (error) {
+        console.error("Error fetching members:", error);
+        // You can set an error state here if needed
+      }
     };
     fetchData();
   }, [db,members]);
@@ -115,7 +122,7 @@ function Members() {
               {members ? (
                 members.map((value, ind) => {
                   return (
-                    <div className="member-block">
+                    <div className="member-block" key={ind}>
                       <div className="row px-2">
                         <div className="col-1 d-flex align-items-center">
                           <p className="m-0">

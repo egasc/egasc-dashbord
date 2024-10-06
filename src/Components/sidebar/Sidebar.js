@@ -39,7 +39,7 @@ function Sidebar() {
               <div className={`nav-items ${PostClass}`} onClick={() => navigate("/egasc-dashbord/")}>
                 <div>
                   <h6 className="nav-item m-0">
-                  <i class="fa-solid fa-image"></i> Posts
+                  <i className="fa-solid fa-image"></i> Posts
                   </h6>
                 </div>
               </div>
@@ -70,7 +70,7 @@ function Sidebar() {
                   <h6 className="m-0">
                   <Popup
                             trigger={<p>
-                              Logout <i class="fa-solid fa-right-from-bracket mx-1"></i> 
+                              Logout <i className="fa-solid fa-right-from-bracket mx-1"></i> 
                             </p>
                             }
                           >
