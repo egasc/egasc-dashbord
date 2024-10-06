@@ -19,7 +19,7 @@
 @media only screen and (max-width: 767px) {
     .add-post-paternt{
         position: sticky;
-        top: 100px;
+        top: 74px;
         /* z-index: 6; */
     }
 }

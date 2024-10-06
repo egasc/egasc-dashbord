@@ -44,7 +44,7 @@ function Loggin() {
             <h1>EGASC</h1>
             <h3>Login To Dashbord</h3>
           </hgroup>
-          <form>
+          <form onSubmit={handleLogin}>
             <div className="group">
               <input type="text" name="username" className={form.username && "used"} onChange={setForm} />
               <span className="highlight"></span>
@@ -52,13 +52,13 @@ function Loggin() {
               <label>Username</label>
             </div>
             <div className="group">
-              <input type="email" name="password" className={form.password && "used"} onChange={setForm} />
+              <input type="password" name="password" className={form.password && "used"} onChange={setForm} />
               <span className="highlight"></span>
               <span className="bar"></span>
               <label>Password</label>
             </div>
             <button
-              type="button"
+              type="submit"
               className="button buttonBlue"
               onClick={handleLogin}
             >

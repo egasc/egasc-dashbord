@@ -9,7 +9,7 @@ import Popup from "reactjs-popup";
 function Sidebar() {
   const navigate = useNavigate();
   const location = useLocation();
-  const LeaderClass = location.pathname === "/egasc-dashbord/" ? "nav-active" : "";
+  const PostClass = location.pathname === "/egasc-dashbord/" ? "nav-active" : "";
   const MembersClass = location.pathname.match(/egasc-dashbord\/Members/) ? "nav-active" : "";
   const GamesClass = location.pathname.match(/egasc-dashbord\/Games/) ? "nav-active" : "";
   const AdminClass = location.pathname.match(/egasc-dashbord\/Admin/) ? "nav-active" : "";
@@ -36,7 +36,7 @@ function Sidebar() {
                   </h6>
                 </div>
               </div>
-              <div className={`nav-items ${LeaderClass}`} onClick={() => navigate("/egasc-dashbord/")}>
+              <div className={`nav-items ${PostClass}`} onClick={() => navigate("/egasc-dashbord/")}>
                 <div>
                   <h6 className="nav-item m-0">
                   <i class="fa-solid fa-image"></i> Posts
