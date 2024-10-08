@@ -1,17 +1,17 @@
 {
   "files": {
-    "main.css": "/egasc-dashbord/static/css/main.b1cfcba4.css",
-    "main.js": "/egasc-dashbord/static/js/main.61e46055.js",
+    "main.css": "/egasc-dashbord/static/css/main.105e9d4c.css",
+    "main.js": "/egasc-dashbord/static/js/main.3b94a827.js",
     "static/media/EGASC.png": "/egasc-dashbord/static/media/EGASC.e6473f018149e28d03e1.png",
     "static/media/profile.png": "/egasc-dashbord/static/media/profile.d3423429e860341ea0d8.png",
     "static/media/person-logo.svg": "/egasc-dashbord/static/media/person-logo.11b79954333a3c5a94a27c45fff43a71.svg",
     "index.html": "/egasc-dashbord/index.html",
     "static/media/addmemberlogo.svg": "/egasc-dashbord/static/media/addmemberlogo.c8885fdbeae3b916ba6108e5472656e2.svg",
-    "main.b1cfcba4.css.map": "/egasc-dashbord/static/css/main.b1cfcba4.css.map",
-    "main.61e46055.js.map": "/egasc-dashbord/static/js/main.61e46055.js.map"
+    "main.105e9d4c.css.map": "/egasc-dashbord/static/css/main.105e9d4c.css.map",
+    "main.3b94a827.js.map": "/egasc-dashbord/static/js/main.3b94a827.js.map"
   },
   "entrypoints": [
-    "static/css/main.b1cfcba4.css",
-    "static/js/main.61e46055.js"
+    "static/css/main.105e9d4c.css",
+    "static/js/main.3b94a827.js"
   ]
 }
