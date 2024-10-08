@@ -5,9 +5,9 @@ function Pagenotfound() {
   const navigate = useNavigate();
   return (
     <div className="page-404">
-        <div class="container">
-          <div class="row">
-            <div class="col-sm-12 col-md-12 mt-5 mb-5">
+        <div className="container">
+          <div className="row">
+            <div className="col-sm-12 col-md-12 mt-5 mb-5">
               <svg
                 width="100%"
                 height="auto"

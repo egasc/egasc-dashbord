@@ -56,7 +56,7 @@ function Logout({ close }) {
                   Cancel
                 </button>
                 <button className="card-button primary" type="button" onClick={handleLogout}>
-                  Logout<i class="fa-solid fa-right-from-bracket mx-1"></i>
+                  Logout<i className="fa-solid fa-right-from-bracket mx-1"></i>
                 </button>
               </div>
             </tr>

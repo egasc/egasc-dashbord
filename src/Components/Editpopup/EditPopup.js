@@ -110,16 +110,16 @@ function EditPopup({
         <form action="">
           <div>
             <div className="d-felx justify-content-center">
-              <div class="file-input">
+              <div className="file-input">
                 <input
                   type="file"
                   name="photo"
                   id="file-input"
-                  class="file-input__input"
+                  className="file-input__input"
                   onChange={handleImageChange}
                 />
                 <label
-                  class="file-input__label"
+                  className="file-input__label"
                   for="file-input"
                   style={{backgroundImage: image ? `url(${URL.createObjectURL(image)})` : `url(${profile})`}}
                 ></label>
